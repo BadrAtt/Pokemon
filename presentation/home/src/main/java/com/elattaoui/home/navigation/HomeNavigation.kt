@@ -5,8 +5,10 @@ import androidx.navigation.compose.composable
 import com.elattaoui.home.HomeScreen
 
 const val HOME_ROUTE = "home"
-fun NavGraphBuilder.homeScreen() {
+fun NavGraphBuilder.homeScreen(
+    onHomeItemSelected: (String) -> Unit
+) {
     composable(HOME_ROUTE) {
-        HomeScreen()
+        HomeScreen(onHomeItemSelected = onHomeItemSelected)
     }
 }

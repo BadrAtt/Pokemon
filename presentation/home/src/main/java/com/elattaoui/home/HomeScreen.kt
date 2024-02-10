@@ -25,7 +25,8 @@ import com.elattaoui.view.theme.components.PokemonItem
 
 @Composable
 fun HomeScreen(
-    homeViewModel: HomeViewModel = hiltViewModel()
+    homeViewModel: HomeViewModel = hiltViewModel(),
+    onHomeItemSelected: (String) -> Unit
 ) {
     LaunchedEffect(Unit) {
         homeViewModel.processIntent(HomeIntent.GetPokemonsList)
@@ -58,7 +59,7 @@ fun HomeScreen(
                             PokemonItem(
                                 pokemon = current
                             ) {
-                                //TODO: Go to pokemon details Screen
+                                onHomeItemSelected(pokemon.name)
                             }
                         }
                     }
