@@ -71,6 +71,7 @@ dependencies {
     implementation(libs.material3)
     implementation(libs.hilt)
     kapt(libs.hilt.compiler)
+    implementation(libs.androidx.navigation.compose)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.test.ext.junit)
