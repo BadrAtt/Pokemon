@@ -2,6 +2,8 @@
 plugins {
     alias(libs.plugins.androidLibrary)
     alias(libs.plugins.kotlinAndroid)
+    alias(libs.plugins.hilt)
+    kotlin("kapt")
 }
 
 android {
@@ -34,9 +36,18 @@ android {
 }
 
 dependencies {
+    implementation(project(":data"))
 
     implementation(libs.core.ktx)
     implementation(libs.material)
+
+    implementation(libs.hilt)
+    kapt(libs.hilt.compiler)
+
+    implementation(libs.kotlinx.coroutines.android)
+
+    implementation(libs.androidx.paging)
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.test.ext.junit)
     androidTestImplementation(libs.espresso.core)

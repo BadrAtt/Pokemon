@@ -44,6 +44,7 @@ android {
 
 dependencies {
     implementation(project(":core:view"))
+    implementation(project(":domain"))
 
     implementation(libs.core.ktx)
     implementation(libs.material)
@@ -53,8 +54,12 @@ dependencies {
     implementation(libs.ui.tooling.preview)
     implementation(libs.material3)
     implementation(libs.hilt)
+    implementation(libs.hilt.navigation.compose)
     kapt(libs.hilt.compiler)
     implementation(libs.androidx.navigation.compose)
+    implementation(libs.lifecycle.viewmodel.compose)
+    implementation(libs.androidx.paging)
+    implementation(libs.androidx.paging.compose)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.test.ext.junit)

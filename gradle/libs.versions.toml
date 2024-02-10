@@ -21,6 +21,14 @@ coroutines = "1.7.3"
 lifecycle-viewmodel-compose = "2.7.0"
 navigationCompose = "2.7.6"
 hilt = "2.50"
+androidx-paging = "3.2.1"
+androidx-paging-compose = "1.0.0-alpha18"
+retrofit = "2.9.0"
+http-logging-interceptor = "4.12.0"
+moshi = "1.15.1"
+moshi-retrofit-converter = "2.9.0"
+ksp = "1.9.0-1.0.13"
+hilt-navigation-compose = "1.0.0"
 
 
 [libraries]
@@ -46,10 +54,19 @@ lifecycle-viewmodel-compose = { module = "androidx.lifecycle:lifecycle-viewmodel
 androidx-navigation-compose = { module = "androidx.navigation:navigation-compose", version.ref = "navigationCompose" }
 hilt = { module = "com.google.dagger:hilt-android", version.ref = "hilt" }
 hilt-compiler = { module = "com.google.dagger:hilt-android-compiler", version.ref = "hilt" }
+androidx-paging = { module = "androidx.paging:paging-runtime", version.ref = "androidx-paging" }
+androidx-paging-compose = { module = "androidx.paging:paging-compose", version.ref = "androidx-paging-compose" }
+retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
+http-logging-interceptor = { module = "com.squareup.okhttp3:logging-interceptor", version.ref = "http-logging-interceptor" }
+moshi = { module = "com.squareup.moshi:moshi", version.ref = "moshi" }
+moshi-retrofit-converter = { module = "com.squareup.retrofit2:converter-moshi", version.ref = "moshi-retrofit-converter" }
+moshi-codegen = { module = "com.squareup.moshi:moshi-kotlin-codegen", version.ref = "moshi" }
+hilt-navigation-compose = { module = "androidx.hilt:hilt-navigation-compose", version.ref = "hilt-navigation-compose" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
 kotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 androidLibrary = { id = "com.android.library", version.ref = "agp" }
 hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
+ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 
