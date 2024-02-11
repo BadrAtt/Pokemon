@@ -10,7 +10,6 @@ import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
@@ -19,7 +18,6 @@ import androidx.paging.LoadState
 import androidx.paging.compose.LazyPagingItems
 import androidx.paging.compose.collectAsLazyPagingItems
 import com.elattaoui.domain.model.Pokemon
-import com.elattaoui.home.intent.HomeIntent
 import com.elattaoui.view.theme.components.AppTopBar
 import com.elattaoui.view.theme.components.PokemonItem
 
@@ -28,9 +26,6 @@ fun HomeScreen(
     homeViewModel: HomeViewModel = hiltViewModel(),
     onHomeItemSelected: (String) -> Unit
 ) {
-    LaunchedEffect(Unit) {
-        homeViewModel.processIntent(HomeIntent.GetPokemonsList)
-    }
     val pokemons: LazyPagingItems<Pokemon> =
         homeViewModel.pokemonsListState.collectAsLazyPagingItems()
 

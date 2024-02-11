@@ -23,6 +23,10 @@ class HomeViewModel @Inject constructor(
         MutableStateFlow(value = PagingData.empty())
     val pokemonsListState: MutableStateFlow<PagingData<Pokemon>> get() = _pokemonsListState
 
+    init {
+        processIntent(HomeIntent.GetPokemonsList)
+    }
+
     fun processIntent(intent: HomeIntent) {
         if (intent is HomeIntent.GetPokemonsList) {
             viewModelScope.launch {
