@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="weight_label">Weight</string>
+    <string name="weight_value"> %1$s KG</string>
+    <string name="height_label">Height</string>
+    <string name="height_value"> %1$s M</string>
+</resources>

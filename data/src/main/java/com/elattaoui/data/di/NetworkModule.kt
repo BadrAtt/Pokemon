@@ -1,5 +1,6 @@
 package com.elattaoui.data.di
 
+import com.elattaoui.data.api.PokemonDetailsApi
 import com.elattaoui.data.api.PokemonsListApi
 import dagger.Module
 import dagger.Provides
@@ -48,5 +49,13 @@ internal object NetworkModule {
         retrofit: Retrofit
     ): PokemonsListApi {
         return retrofit.create(PokemonsListApi::class.java)
+    }
+
+    @Provides
+    @Singleton
+    fun providesPokemonDetailsApi(
+        retrofit: Retrofit
+    ): PokemonDetailsApi {
+        return retrofit.create(PokemonDetailsApi::class.java)
     }
 }

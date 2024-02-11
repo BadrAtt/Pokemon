@@ -29,6 +29,7 @@ moshi = "1.15.1"
 moshi-retrofit-converter = "2.9.0"
 ksp = "1.9.0-1.0.13"
 hilt-navigation-compose = "1.0.0"
+lifecycle-runtime-compose = "2.7.0"
 
 
 [libraries]
@@ -62,6 +63,7 @@ moshi = { module = "com.squareup.moshi:moshi", version.ref = "moshi" }
 moshi-retrofit-converter = { module = "com.squareup.retrofit2:converter-moshi", version.ref = "moshi-retrofit-converter" }
 moshi-codegen = { module = "com.squareup.moshi:moshi-kotlin-codegen", version.ref = "moshi" }
 hilt-navigation-compose = { module = "androidx.hilt:hilt-navigation-compose", version.ref = "hilt-navigation-compose" }
+lifecycle-runtime-compose = { module = "androidx.lifecycle:lifecycle-runtime-compose", version.ref = "lifecycle-runtime-compose" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
