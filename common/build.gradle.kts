@@ -37,7 +37,7 @@ dependencies {
 
     implementation(libs.core.ktx)
     implementation(libs.material)
-    testImplementation(libs.junit)
-    androidTestImplementation(libs.androidx.test.ext.junit)
-    androidTestImplementation(libs.espresso.core)
+    implementation(libs.kotlinx.coroutines.android)
+    implementation(libs.courintes.test)
+    implementation(libs.junit)
 }

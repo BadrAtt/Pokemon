@@ -37,6 +37,7 @@ android {
 
 dependencies {
     implementation(project(":data"))
+    implementation(project(":common"))
 
     implementation(libs.core.ktx)
     implementation(libs.material)
@@ -49,6 +50,11 @@ dependencies {
     implementation(libs.androidx.paging)
 
     testImplementation(libs.junit)
+    testImplementation(libs.mockk.test)
+    testImplementation(libs.courintes.test)
+    testImplementation(libs.androidx.arch.testing)
+    testImplementation(libs.turbine.testing)
+    testImplementation(libs.assertj)
     androidTestImplementation(libs.androidx.test.ext.junit)
     androidTestImplementation(libs.espresso.core)
 }

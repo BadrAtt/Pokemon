@@ -46,6 +46,7 @@ dependencies {
 
     implementation(project(":core:view"))
     implementation(project(":domain"))
+    implementation(project(":common"))
 
     implementation(libs.core.ktx)
     implementation(libs.material)
@@ -62,7 +63,13 @@ dependencies {
     implementation(libs.coil.compose)
     implementation(libs.lifecycle.runtime.compose)
 
+
     testImplementation(libs.junit)
+    testImplementation(libs.mockk.test)
+    testImplementation(libs.courintes.test)
+    testImplementation(libs.androidx.arch.testing)
+    testImplementation(libs.turbine.testing)
+    testImplementation(libs.assertj)
     androidTestImplementation(libs.androidx.test.ext.junit)
     androidTestImplementation(libs.espresso.core)
 }

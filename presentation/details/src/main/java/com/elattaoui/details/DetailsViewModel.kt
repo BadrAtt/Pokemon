@@ -7,6 +7,7 @@ import com.elattaoui.domain.usecase.detail.GetPokemonDetails
 import com.elattaoui.domain.usecase.detail.PokemonDetailsRequestState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -18,7 +19,7 @@ class DetailsViewModel @Inject constructor(
 
     private val _pokemonDetailsState: MutableStateFlow<DetailsUiState> =
         MutableStateFlow(DetailsUiState.Idle)
-    val pokemonDetailsState = _pokemonDetailsState.asStateFlow()
+    val pokemonDetailsState: StateFlow<DetailsUiState> = _pokemonDetailsState.asStateFlow()
 
     fun processIntent(detailsIntent: DetailsIntent) {
         if (detailsIntent is DetailsIntent.GetDetails) {

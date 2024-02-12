@@ -30,6 +30,10 @@ moshi-retrofit-converter = "2.9.0"
 ksp = "1.9.0-1.0.13"
 hilt-navigation-compose = "1.0.0"
 lifecycle-runtime-compose = "2.7.0"
+mockk = "1.13.9"
+androidx-arch-testing = "2.2.0"
+turbine = "1.0.0"
+assertj = "3.24.2"
 
 
 [libraries]
@@ -64,6 +68,13 @@ moshi-retrofit-converter = { module = "com.squareup.retrofit2:converter-moshi", 
 moshi-codegen = { module = "com.squareup.moshi:moshi-kotlin-codegen", version.ref = "moshi" }
 hilt-navigation-compose = { module = "androidx.hilt:hilt-navigation-compose", version.ref = "hilt-navigation-compose" }
 lifecycle-runtime-compose = { module = "androidx.lifecycle:lifecycle-runtime-compose", version.ref = "lifecycle-runtime-compose" }
+
+mockk-test = { module = "io.mockk:mockk", version.ref = "mockk" }
+courintes-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "coroutines" }
+androidx-arch-testing = { module = "androidx.arch.core:core-testing", version.ref = "androidx-arch-testing" }
+androidx-paging-testing = { module = "androidx.paging:paging-common", version.ref = "androidx-paging" }
+turbine-testing = { module = "app.cash.turbine:turbine", version.ref = "turbine" }
+assertj = { module = "org.assertj:assertj-core", version.ref = "assertj" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }

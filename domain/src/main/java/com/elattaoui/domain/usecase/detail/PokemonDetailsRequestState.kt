@@ -5,5 +5,6 @@ import com.elattaoui.domain.model.PokemonDetails
 sealed class PokemonDetailsRequestState {
     data object Loading : PokemonDetailsRequestState()
     data class Success(val data: PokemonDetails) : PokemonDetailsRequestState()
-    data class Exception(val code: Int, val exception: Throwable) : PokemonDetailsRequestState()
+    data class Exception(val code: Int = -1, val exception: Throwable) :
+        PokemonDetailsRequestState()
 }
