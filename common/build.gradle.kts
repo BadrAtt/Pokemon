@@ -40,4 +40,6 @@ dependencies {
     implementation(libs.kotlinx.coroutines.android)
     implementation(libs.courintes.test)
     implementation(libs.junit)
+    androidTestImplementation(libs.androidx.test.ext.junit)
+    androidTestImplementation(libs.espresso.core)
 }
