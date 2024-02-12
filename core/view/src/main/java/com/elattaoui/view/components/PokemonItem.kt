@@ -1,4 +1,4 @@
-package com.elattaoui.view.theme.components
+package com.elattaoui.view.components
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer

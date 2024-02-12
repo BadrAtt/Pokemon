@@ -26,7 +26,7 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import coil.compose.AsyncImage
 import com.elattaoui.details.intent.DetailsIntent
-import com.elattaoui.view.theme.components.AppTopBar
+import com.elattaoui.view.components.AppTopBar
 
 @Composable
 fun DetailsScreen(

@@ -1,4 +1,4 @@
-package com.elattaoui.view.theme.components
+package com.elattaoui.view.components
 
 import androidx.compose.material3.CenterAlignedTopAppBar
 import androidx.compose.material3.ExperimentalMaterial3Api

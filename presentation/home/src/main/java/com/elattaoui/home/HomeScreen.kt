@@ -18,8 +18,9 @@ import androidx.paging.LoadState
 import androidx.paging.compose.LazyPagingItems
 import androidx.paging.compose.collectAsLazyPagingItems
 import com.elattaoui.domain.model.Pokemon
-import com.elattaoui.view.theme.components.AppTopBar
-import com.elattaoui.view.theme.components.PokemonItem
+import com.elattaoui.view.components.AppLoader
+import com.elattaoui.view.components.AppTopBar
+import com.elattaoui.view.components.PokemonItem
 
 @Composable
 fun HomeScreen(
@@ -45,7 +46,7 @@ fun HomeScreen(
         ) {
 
             if (pokemons.loadState.refresh is LoadState.Loading) {
-                //TODO: Display progress bar
+                AppLoader()
             } else {
                 LazyVerticalGrid(columns = GridCells.Fixed(2)) {
                     items(pokemons.itemCount) { pokemonItemIndex ->
