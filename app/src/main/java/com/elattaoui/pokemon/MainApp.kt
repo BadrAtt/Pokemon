@@ -21,6 +21,8 @@ fun MainApp() {
         homeScreen { itemName ->
             navController.navigateToDetails(itemName)
         }
-        detailsScreen()
+        detailsScreen(onNavigateUp = {
+            navController.navigateUp()
+        })
     }
 }

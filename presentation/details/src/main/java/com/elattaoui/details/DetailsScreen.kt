@@ -31,7 +31,8 @@ import com.elattaoui.view.components.AppTopBar
 @Composable
 fun DetailsScreen(
     pokemonName: String,
-    detailsViewModel: DetailsViewModel = hiltViewModel()
+    detailsViewModel: DetailsViewModel = hiltViewModel(),
+    onNavigateUp: () -> Unit
 ) {
     val state by detailsViewModel.pokemonDetailsState.collectAsStateWithLifecycle()
     LaunchedEffect(key1 = Unit) {
@@ -40,7 +41,7 @@ fun DetailsScreen(
 
     Scaffold(modifier = Modifier.fillMaxSize(),
         topBar = {
-            AppTopBar(title = pokemonName)
+            AppTopBar(title = pokemonName, hasBackBtn = true, onBackBtnClicked = onNavigateUp)
         }) { paddingValues ->
         Column(
             modifier = Modifier
