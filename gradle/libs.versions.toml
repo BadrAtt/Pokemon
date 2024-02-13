@@ -33,7 +33,7 @@ lifecycle-runtime-compose = "2.7.0"
 mockk = "1.13.9"
 androidx-arch-testing = "2.2.0"
 turbine = "1.0.0"
-assertj = "3.24.2"
+assertj = "3.25.3"
 
 
 [libraries]
