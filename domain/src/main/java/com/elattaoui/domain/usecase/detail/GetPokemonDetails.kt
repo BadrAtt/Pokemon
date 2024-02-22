@@ -1,10 +1,10 @@
 package com.elattaoui.domain.usecase.detail
 
-import com.elattaoui.data.repository.details.PokemonDetailsRepository
-import com.elattaoui.data.response.ApiResponse
-import com.elattaoui.domain.mapper.toDomainModel
+import com.elattaoui.domain.model.resource.ResultState
+import com.elattaoui.domain.repository.details.PokemonDetailsRepository
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
+import kotlinx.coroutines.flow.onStart
 import javax.inject.Inject
 
 class GetPokemonDetails @Inject constructor(
@@ -12,13 +12,12 @@ class GetPokemonDetails @Inject constructor(
 ) : GetPokemonDetailsUseCase {
     override suspend fun invoke(name: String): Flow<PokemonDetailsRequestState> {
         return flow {
-            emit(PokemonDetailsRequestState.Loading)
             when (val response = repository.getPokemonDetails(name)) {
-                is ApiResponse.Success -> {
-                    emit(PokemonDetailsRequestState.Success(response.data.toDomainModel()))
+                is ResultState.Success -> {
+                    emit(PokemonDetailsRequestState.Success(response.data))
                 }
 
-                is ApiResponse.Error -> {
+                is ResultState.Error -> {
                     emit(
                         PokemonDetailsRequestState.Exception(
                             code = response.code,
@@ -27,6 +26,8 @@ class GetPokemonDetails @Inject constructor(
                     )
                 }
             }
+        }.onStart {
+            emit(PokemonDetailsRequestState.Loading)
         }
     }
 }

@@ -3,7 +3,7 @@ plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.kotlinAndroid)
     alias(libs.plugins.hilt)
-    kotlin("kapt")
+    alias(libs.plugins.ksp)
 }
 
 android {
@@ -39,9 +39,6 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
-    kapt {
-        correctErrorTypes = true
-    }
     buildFeatures {
         compose = true
     }
@@ -59,6 +56,8 @@ dependencies {
     implementation(project(":core:view"))
     implementation(project(":presentation:home"))
     implementation(project(":presentation:details"))
+    implementation(project(":domain"))
+    implementation(project(":data"))
 
 
     implementation(libs.core.ktx)
@@ -70,7 +69,8 @@ dependencies {
     implementation(libs.ui.tooling.preview)
     implementation(libs.material3)
     implementation(libs.hilt)
-    kapt(libs.hilt.compiler)
+
+    ksp(libs.hilt.compiler)
     implementation(libs.androidx.navigation.compose)
 
     testImplementation(libs.junit)

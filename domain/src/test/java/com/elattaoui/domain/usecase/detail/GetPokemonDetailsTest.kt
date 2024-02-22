@@ -4,10 +4,9 @@ package com.elattaoui.domain.usecase.detail
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import app.cash.turbine.test
 import com.elattaoui.common.MainDispatcherRule
-import com.elattaoui.data.repository.details.PokemonDetailsRepository
-import com.elattaoui.data.response.ApiResponse
 import com.elattaoui.domain.MockData
-import com.elattaoui.domain.mapper.toDomainModel
+import com.elattaoui.domain.model.resource.ResultState
+import com.elattaoui.domain.repository.details.PokemonDetailsRepository
 import io.mockk.coEvery
 import io.mockk.mockk
 import kotlinx.coroutines.test.runTest
@@ -36,7 +35,7 @@ class GetPokemonDetailsTest {
 
     @Test
     fun `should emit Loading and then Success`() = runTest {
-        coEvery { pokemonDetailsRepository.getPokemonDetails(any()) } returns ApiResponse.Success(
+        coEvery { pokemonDetailsRepository.getPokemonDetails(any()) } returns ResultState.Success(
             MockData.mockPokoemonDetails
         )
 
@@ -46,7 +45,7 @@ class GetPokemonDetailsTest {
             val itemLoading = awaitItem()
             Assertions.assertThat(PokemonDetailsRequestState.Loading).isEqualTo(itemLoading)
             val itemSuccess = awaitItem()
-            Assertions.assertThat(PokemonDetailsRequestState.Success(MockData.mockPokoemonDetails.toDomainModel()))
+            Assertions.assertThat(PokemonDetailsRequestState.Success(MockData.mockPokoemonDetails))
                 .isEqualTo(itemSuccess)
             awaitComplete()
         }
@@ -54,7 +53,7 @@ class GetPokemonDetailsTest {
 
     @Test
     fun `should emit Loading and then Error`() = runTest {
-        coEvery { pokemonDetailsRepository.getPokemonDetails(any()) } returns ApiResponse.Error(
+        coEvery { pokemonDetailsRepository.getPokemonDetails(any()) } returns ResultState.Error(
             exception = MockData.exception
         )
         val flow = getPokemonDetails.invoke("po")

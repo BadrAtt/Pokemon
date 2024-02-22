@@ -1,10 +1,11 @@
 package com.elattaoui.domain
 
-import com.elattaoui.data.entity.PokemonDetailsEntity
+import com.elattaoui.domain.model.PokemonDetails
+
 
 object MockData {
 
-    val mockPokoemonDetails = PokemonDetailsEntity(
+    val mockPokoemonDetails = PokemonDetails(
         id = 21,
         name = "spearow",
         height = 3,
