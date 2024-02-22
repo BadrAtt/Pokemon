@@ -25,8 +25,6 @@ the communication between layers follows a uniderictional flow,
 The ui layer sends user action as intents to the viewModel, which communicates respectively with the domain layer, then the data layer. 
 Each layer exposes data to other layer as data streams. 
 
-![Architecture](https://raw.githubusercontent.com/BadrAtt/Pokemon/main/images/architecture.png)
-
 # Modularization
 
 The app is built with multi-module structure for:
