@@ -4,10 +4,10 @@ import com.elattaoui.data.datasource.details.PokemonDetailsDataSource
 import com.elattaoui.data.datasource.details.PokemonDetailsDataSourceImpl
 import com.elattaoui.data.datasource.pokemons.PokemonsListDataSource
 import com.elattaoui.data.datasource.pokemons.PokemonsListDataSourceImpl
-import com.elattaoui.data.repository.details.PokemonDetailsRepository
 import com.elattaoui.data.repository.details.PokemonDetailsRepositoryImpl
-import com.elattaoui.data.repository.pokemons.PokemonsListRepository
 import com.elattaoui.data.repository.pokemons.PokemonsListRepositoryImpl
+import com.elattaoui.domain.repository.details.PokemonDetailsRepository
+import com.elattaoui.domain.repository.pokemons.PokemonsListRepository
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
